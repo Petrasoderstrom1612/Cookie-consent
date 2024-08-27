@@ -1,5 +1,8 @@
-let modal = document.getElementById("modal")
+const modal = document.getElementById("modal")
+const modalCloseBtn = document.getElementById("modal-close-btn")
 
 setTimeout(function(){
     modal.style.display = "flex"
 },1500)
+
+modalCloseBtn.addEventListener("click", function(){modal.style.display = "none"})

@@ -12,7 +12,14 @@ modalCloseBtn.addEventListener("click", function(){modal.style.display = "none"}
 
 consentForm.addEventListener("submit",function(e){
     e.preventDefault()
-    console.log("submitted")
+    
+    const formData = new FormData(document.querySelector('form')) //create a new instance and save it in a variable, you can also replace document.querySelector('form') by the dom consentForm
+    
+    const name = formData.get("name-input")
+    const email = new FormData(consentForm).get("email-input")
+    // const password = new FormData(document.getElementById("consent-form")).get("password-input")
+    console.log(name,email,password)
+
     modalText.innerHTML = `
     <div class="modal-inner-loading">
     <img src="loading.svg" class="loading">
@@ -24,8 +31,8 @@ consentForm.addEventListener("submit",function(e){
     },1500)
 
     setTimeout(function(){
-        modalInner.innerHTML = `<h2>Thanks you sucker! </h2>
-    <p>We just sold the rights to your eternal soul.</p>
+        modalInner.innerHTML = `<h2>Thanks  <span class="modal-display-name">${name}</span>, you sucker! </h2>
+    <p>We just sold the rights to ${email}.</p>
     <div class="idiot-gif">
         <img src="laughing.gif">
     </div>` 

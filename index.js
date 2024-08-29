@@ -1,6 +1,6 @@
 const modal = document.getElementById("modal")
 const modalCloseBtn = document.getElementById("modal-close-btn")
-const consentForm = document.getElementById("consent-form")
+const consentFormEl = document.getElementById("consent-form")
 const modalText = document.getElementById("modal-text")
 const modalInner = document.getElementById("modal-inner")
 
@@ -10,14 +10,14 @@ setTimeout(function(){
 
 modalCloseBtn.addEventListener("click", function(){modal.style.display = "none"})
 
-consentForm.addEventListener("submit",function(e){
+consentFormEl.addEventListener("submit",function(e){
     e.preventDefault()
     
-    const formData = new FormData(document.querySelector('form')) //create a new instance and save it in a variable, you can also replace document.querySelector('form') by the dom consentForm
+    const data = new FormData(consentFormEl) //create a new Instance on the dom and save it in a variable, you can also use html tag with query selector new FormData(document.querySelector('form'))
     
-    const name = formData.get("name-input")
-    const email = new FormData(consentForm).get("email-input")
-    // const password = new FormData(document.getElementById("consent-form")).get("password-input")
+    const name = data.get("name-input") //get the user answer from input field with id "name-input", get() is a inbuilt JS method on instances
+    const email = new FormData(consentFormEl).get("email-input")
+
     console.log(name,email)
 
     modalText.innerHTML = `

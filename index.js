@@ -3,12 +3,19 @@ const modalCloseBtn = document.getElementById("modal-close-btn")
 const consentFormEl = document.getElementById("consent-form")
 const modalText = document.getElementById("modal-text")
 const modalInner = document.getElementById("modal-inner")
+const decline = document.getElementById("decline")
+const modalChoiceBtns = document.getElementById("modal-choice-btns")
+
+
+modalCloseBtn.addEventListener("click", function(){modal.style.display = "none"})
 
 setTimeout(function(){
     modal.style.display = "flex"
 },1500)
 
-modalCloseBtn.addEventListener("click", function(){modal.style.display = "none"})
+decline.addEventListener("mouseover", function(){
+    modalChoiceBtns.classList.toggle("modal-choice-btns-decline") 
+})
 
 consentFormEl.addEventListener("submit",function(e){
     e.preventDefault()

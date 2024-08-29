@@ -125,6 +125,13 @@ main{
     justify-content: center;
 }
 
+.modal-choice-btns-decline{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    flex-direction: row-reverse;
+}
+
 .modal-btn{
     padding: 10px 24px;
     cursor: pointer;

@@ -7,22 +7,24 @@ const decline = document.getElementById("decline")
 const modalChoiceBtns = document.getElementById("modal-choice-btns")
 
 
-modalCloseBtn.addEventListener("click", function(){modal.style.display = "none"})
+modalCloseBtn.addEventListener("click", function(){ //not working on render due to disabled
+    modal.style.display = "none"
+})
 
 setTimeout(function(){
     modal.style.display = "flex"
 },1500)
 
 decline.addEventListener("mouseover", function(){
-    modalChoiceBtns.classList.toggle("modal-choice-btns-decline") 
+    modalChoiceBtns.classList.toggle("decline") //you are just adding or removing this additional class decline, the original class that is on the element stays
 })
 
 consentFormEl.addEventListener("submit",function(e){
     e.preventDefault()
     
-    const data = new FormData(consentFormEl) //create a new Instance on the dom and save it in a variable, you can also use html tag with query selector new FormData(document.querySelector('form'))
+    const data = new FormData(consentFormEl) //create a new Instance strict name FormData on the dom and save it in a variable, you can also use html tag with query selector new FormData(document.querySelector('form'))
     
-    const name = data.get("name-input") //get the user answer from input field with id "name-input", get() is a inbuilt JS method on instances
+    const name = data.get("name-input") //get the user answer from input field with name "name-input", get() is a inbuilt JS method on instances
     const email = new FormData(consentFormEl).get("email-input")
 
     console.log(name,email)

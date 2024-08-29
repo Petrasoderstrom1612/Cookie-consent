@@ -125,10 +125,7 @@ main{
     justify-content: center;
 }
 
-.modal-choice-btns-decline{
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+.decline{
     flex-direction: row-reverse;
 }
 

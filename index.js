@@ -18,7 +18,7 @@ consentForm.addEventListener("submit",function(e){
     const name = formData.get("name-input")
     const email = new FormData(consentForm).get("email-input")
     // const password = new FormData(document.getElementById("consent-form")).get("password-input")
-    console.log(name,email,password)
+    console.log(name,email)
 
     modalText.innerHTML = `
     <div class="modal-inner-loading">
@@ -36,7 +36,9 @@ consentForm.addEventListener("submit",function(e){
     <div class="idiot-gif">
         <img src="laughing.gif">
     </div>` 
+    modalCloseBtn.disabled = false
     },3000)
+
 })
 
 

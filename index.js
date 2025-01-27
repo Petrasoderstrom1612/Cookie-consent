@@ -16,6 +16,7 @@ setTimeout(function(){
 },1500)
 
 decline.addEventListener("mouseover", function(){
+    
     modalChoiceBtns.classList.toggle("decline") //you are just adding or removing this additional class decline, the original class that is on the element stays
 })
 

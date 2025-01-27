@@ -164,6 +164,13 @@ input{
     margin-bottom: 0;
 }
 
+.main-box{
+    width:100px;
+    height:100px;
+    background-color: white;
+    border:1px solid white;
+}
+
 @media (min-width: 1024px) { /*modal on computer */
 .modal{
     max-width: 400px;
